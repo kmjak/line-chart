@@ -1,5 +1,12 @@
-export default function Home() {
-  return (
-    <h1>Demo Chart</h1>
-  );
+import LineChart from "@/components/LineChart";
+import { JSX } from "react";
+
+export default function Home(): JSX.Element {
+  return(
+    <>
+    <div className="bg-gray-200 w-full h-full">
+      <LineChart />
+    </div>
+    </>
+  )
 }
