@@ -1,7 +1,7 @@
 "use client"
 
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, LinearScale, CategoryScale, LineElement,PointElement, Legend, Title, ChartData, ChartOptions } from "chart.js";
+import { Chart as ChartJS, LinearScale, CategoryScale, LineElement,PointElement, Legend, Title, ChartData, ChartOptions, Tooltip } from "chart.js";
 
 import { JSX } from "react";
 
@@ -11,7 +11,8 @@ ChartJS.register(
   LineElement,
   PointElement,
   Legend,
-  Title
+  Title,
+  Tooltip,
 );
 
 export default function LineChart():JSX.Element {
@@ -52,6 +53,10 @@ export default function LineChart():JSX.Element {
   // オプション
   // ChartOptions<'line'>は<>で何のチャートかを指定する
   const options:ChartOptions<'line'> = {
+    // レスポンシブ対応をつけるか
+    responsive: true,
+    // グラフのアスペクト比
+    aspectRatio: 1,
     // x軸やy軸の設定
     scales: {
       // y軸の設定
